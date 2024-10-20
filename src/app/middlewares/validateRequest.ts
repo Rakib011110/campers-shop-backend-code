@@ -1,6 +1,5 @@
 import { NextFunction, Request, Response } from "express";
 import { AnyZodObject } from "zod";
-import catchAsynce from "../../utils/catchAsynce";
 
 const validateRequest = (schema: AnyZodObject) => {
   return catchAsynce(
@@ -16,3 +15,9 @@ const validateRequest = (schema: AnyZodObject) => {
 };
 
 export default validateRequest;
+
+function catchAsynce(
+  arg0: (req: Request, res: Response, next: NextFunction) => Promise<void>
+) {
+  throw new Error("Function not implemented.");
+}
